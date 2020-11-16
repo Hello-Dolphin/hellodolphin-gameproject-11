@@ -140,7 +140,7 @@ class GameScene extends Phaser.Scene {
                 bomb.setVelocityX(-200);
                 this.physics.add.overlap(p1, bomb, ()=>{
                     gamesound.stop();
-                    this.scene.start('GameOver')
+                    this.scene.start('GameOver', {score:score})
                 })
             },
             callbackScope: this,

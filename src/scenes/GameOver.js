@@ -41,8 +41,8 @@ class GameOver extends Phaser.Scene {
 
 
         //Score
-        scoreText = this.add.text(1100, 50, 'score: 0', 
-        { font: "50px Pixel Operator 8", fill: '#000' }).setDepth(10).setScale(2);
+        scoreText = this.add.text(540, 450, 'score : 0', 
+        { font: "150px Pixel Operator 8", fill: '#fff' }).setDepth(10).setScale(4);
         
     
         //Input enter
@@ -51,7 +51,7 @@ class GameOver extends Phaser.Scene {
     
     
     update(delta, time) {
-        scoreText.setText('Score: ' + finalScore);
+        scoreText.setText('Score : ' + finalScore);
         // if (keyENTER.isDown) {
         //     this.scene.start('MainMenu');
         //     gameOvermp3.stop();
