@@ -3,6 +3,7 @@ let how;
 // let click;
 //Sound
 let menusound;
+let test;
 
 //Input from keyboard
 // let keyENTER;

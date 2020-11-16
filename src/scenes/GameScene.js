@@ -119,7 +119,7 @@ class GameScene extends Phaser.Scene {
                 this.physics.add.overlap(bulletGroup, shark, sharkDestroy);
                 this.physics.add.overlap(p1, shark, ()=>{
                     gamesound.stop();
-                    this.scene.start('GameOver')
+                    this.scene.start('GameOver', {score:score});
                 });
                 
             },
