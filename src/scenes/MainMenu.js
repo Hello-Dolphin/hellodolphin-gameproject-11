@@ -56,7 +56,7 @@ class MainMenu extends Phaser.Scene {
         seaweed2 = this.add.sprite(200, 660, 'seaweed2').setScale(0.5);
         seaweed3 = this.add.sprite(this.game.renderer.width-100, 640, 'seaweed3').setScale(0.7);
         seaweed4 = this.add.sprite(300, 660, 'seaweed4').setScale(0.4);
-        name = this.add.image(this.game.renderer.width/2, (this.game.renderer.height/2)-200, 'logo').setScale(0.2);
+        this.add.image(this.game.renderer.width/2, (this.game.renderer.height/2)-200, 'logo').setScale(0.2);
 
         
         //Animation all charactor

@@ -26,6 +26,8 @@ let keyFire;
 //Score
 let scoreText;
 let score; 
+let repaetCount;
+let progress;
 
 //Sound
 let tridentsound;
@@ -87,8 +89,10 @@ class GameScene extends Phaser.Scene {
                 start: 0,
                 end: 1
             }),
+            duration: 500,
             framerate: 1,
             repeat: -1
+
         })
         
         //Player Control
@@ -125,7 +129,8 @@ class GameScene extends Phaser.Scene {
             },
             callbackScope: this,
             loop: true,
-            paused: false
+            paused: false,
+            // repeat: 10
         })
         
         event_bomb = this.time.addEvent({
@@ -162,7 +167,13 @@ class GameScene extends Phaser.Scene {
         
         //Bullet
         bulletGroup = this.add.group();
+
+        // repaetCount = this.add.text(100, 150, 'count', 
+        // { font: "50px Pixel Operator 8", fill: '#000' }).setDepth(10).setScale(2);
         
+        // progress = this.add.text(100, 150, 'count', 
+        // { font: "50px Pixel Operator 8", fill: '#000' }).setDepth(10).setScale(2);
+
     }
     
     
@@ -170,6 +181,8 @@ class GameScene extends Phaser.Scene {
     update(delta, time) {
         //Score
         scoreText.setText('Score: ' + score);
+        // repaetCount.setText('Repeat: ' + event.getRepeatCount());
+        // progress.setText('Repeat: ' + event.getProgress());
         
         background.tilePositionX += 1.65;
 
