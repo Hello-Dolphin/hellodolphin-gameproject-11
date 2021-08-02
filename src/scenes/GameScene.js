@@ -26,6 +26,8 @@ let keyFire;
 //Score
 let scoreText;
 let score; 
+let repaetCount;
+let progress;
 
 //Sound
 let tridentsound;
@@ -101,7 +103,7 @@ class GameScene extends Phaser.Scene {
         //Time event
             // sharkGroup = this.physics.add.group();
         event = this.time.addEvent({
-            delay: 800,
+            delay: 1500,
             callback: function () {
                 shark = this.physics.add.sprite(1280, Phaser.Math.Between(220 , 
                     700), 'shark').setScale(0.35);
@@ -124,8 +126,9 @@ class GameScene extends Phaser.Scene {
                 
             },
             callbackScope: this,
-            loop: true,
-            paused: false
+            loop: false,
+            paused: false,
+            repeat: 10 
         })
         
         event_bomb = this.time.addEvent({
@@ -148,9 +151,17 @@ class GameScene extends Phaser.Scene {
             paused: false
         })
 
+        event.getRepeatCount()
+
 
         //Create Score
         scoreText = this.add.text(1100, 50, 'score: 0', 
+        { font: "50px Pixel Operator 8", fill: '#000' }).setDepth(10).setScale(2);
+
+        repaetCount = this.add.text(1100, 150, 'count', 
+        { font: "50px Pixel Operator 8", fill: '#000' }).setDepth(10).setScale(2);
+
+        progress = this.add.text(1100, 250, 'count', 
         { font: "50px Pixel Operator 8", fill: '#000' }).setDepth(10).setScale(2);
 
         function sharkDestroy(bulletGroup, shark){
@@ -170,6 +181,10 @@ class GameScene extends Phaser.Scene {
     update(delta, time) {
         //Score
         scoreText.setText('Score: ' + score);
+
+        repaetCount.setText('Repeat: ' + event.getRepeatCount());
+
+        progress.setText('Progress: ' + event.getProgress());
         
         background.tilePositionX += 1.65;
 
